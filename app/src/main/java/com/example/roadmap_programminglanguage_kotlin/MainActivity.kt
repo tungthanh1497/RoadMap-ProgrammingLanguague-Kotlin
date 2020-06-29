@@ -1,10 +1,13 @@
 package com.example.roadmap_programminglanguage_kotlin
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import com.example.roadmap_programminglanguage_kotlin.models.MyModel
 
 class MainActivity : AppCompatActivity() {
+
+    private val TAG = MainActivity::class.qualifiedName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,5 +19,9 @@ class MainActivity : AppCompatActivity() {
         arr.add("view")
         arr.add("navigate")
         Log.d("onCreate: ", arr.joinToString(", ", "[", "]"))
+
+        var m = MyModel()
+        m.sName = "alo"
+        Log.d(TAG, "onCreate: " + m.sName)
     }
 }
